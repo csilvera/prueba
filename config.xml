@@ -8,7 +8,7 @@
         Apache Cordova Team
     </author>
     <content src="index.html" />
-    <gap:plugin name="de.appplant.cordova.plugin.local-notification" version="0.8.1" />
+    <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
     <plugin name="cordova-plugin-battery-status" spec="~2.0.2" />
     <plugin name="cordova-plugin-device" spec="~2.0.2" />
     <plugin name="cordova-plugin-splashscreen" spec="~5.0.2" />
