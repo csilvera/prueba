@@ -33,7 +33,21 @@ function iniciando(){
     var plataforma = device.platform;
     console.log('plataforma actual:'+ plataforma);
     if(plataforma == 'android'){
-        notifica();
+        //notifica();
+        
+          Notification.requestPermission(function (permission) {
+            // If the user accepts, let’s create a notification
+            if (permission === ‘granted’) {
+              var notification = new Notification(“My title”, {
+                   tag: ‘message1’, 
+                   body: “My body” 
+              }); 
+              notification.onshow  = function() { console.log(‘show’); };
+              notification.onclose = function() { console.log(‘close’); };
+              notification.onclick = function() { console.log(‘click’); };
+            }
+          });
+        
     }
     else{
         console.log('notificacion no soportada');
