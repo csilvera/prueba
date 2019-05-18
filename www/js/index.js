@@ -46,6 +46,7 @@ function iniciando(){
       notification.onshow  = function() { console.log('show'); };
       notification.onclose = function() { console.log('close'); };
       notification.onclick = function() { console.log('click'); };
+        setInterval(iniciando(), 40000);
     }
   });
 }
@@ -53,22 +54,9 @@ function iniciando(){
     }
     else{
         console.log('notificacion no soportada');
-        if ("Notification" in window) {
-            Notification.requestPermission(function (permission) {
-    // If the user accepts, let’s create a notification
-    if (permission === 'granted') {
-      var notification = new Notification("My title", {
-           tag: 'message1', 
-           body: 'My body' 
-      }); 
-      notification.onshow  = function() { console.log('show'); };
-      notification.onclose = function() { console.log('close'); };
-      notification.onclick = function() { console.log('click'); };
-    }
-  });
-}
     }
 }
+var nn = setInterval(iniciando(), 40000);
 function setnoti(){
     cordova.plugins.notification.local.schedule({
         title: 'My first notification',
